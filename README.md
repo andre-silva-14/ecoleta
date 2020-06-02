@@ -41,10 +41,10 @@ Instructions can be found in each module's folder:
 - [Backend](https://github.com/andre-silva-14/ecoleta/tree/master/server)
 - [Web](https://github.com/andre-silva-14/ecoleta/tree/master/web)
 
-## :sparkles: Design
+## :black_nib: Design
 
 The design layout can be found in [Figma](https://www.figma.com/file/9TlOcj6l7D05fZhU12xWT3/Ecoleta-(Booster)?node-id=0%3A1).
 
-## :black_nib: License
+## :memo: License
 
 This project is under the MIT license. See [LICENSE](LICENSE) for more details.
