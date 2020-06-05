@@ -1,10 +1,10 @@
-<img alt="Ecoleta - Your Garbage Collection Marketplace" title="Ecoleta - Your Garbage Collection Marketplace" src="resources/homepage.png" />
+<img alt="Ecoleta - Your Waste Collection Marketplace" title="Ecoleta - Your Waste Collection Marketplace" src=".github/homepage.png" />
 
 <h1 align="center">
   Ecoleta
 </h1>
 
-<p align="center">Your Garbage Collection Marketplace.</p>
+<p align="center">Your Waste Collection Marketplace.</p>
 
 <p align="center">
   <a href="#" style="text-decoration: none">
@@ -23,7 +23,7 @@
 
 ## :computer: The Project
 
-This initiative was started by [Rocketseat](https://github.com/Rocketseat) and inspired by the International Environment Week! Ecoleta is a garbage collection manager where companies will be able to create access points to certain types of garbage and users will be able to find the closest garbage collector company for their type of garbage and contact them either via e-mail or whatsapp via Ecoleta application. Overall, the purpose is to promote reutilization of old materials in an easy and efficient way to everyone!
+This initiative was started by [Rocketseat](https://github.com/Rocketseat) and inspired by the International Environment Week! Ecoleta is a waste collection manager where companies will be able to create access points to certain types of waste and users will be able to find the closest waste collector company for their type of waste and contact them either via e-mail or whatsapp via Ecoleta application. Overall, the purpose is to promote reutilization of old materials in an easy and efficient way to everyone!
 
 ## :rocket: Technologies
 
@@ -43,7 +43,7 @@ Instructions can be found in each module's folder:
 
 ## :black_nib: Design
 
-The design layout can be found in [Figma](https://www.figma.com/file/9TlOcj6l7D05fZhU12xWT3/Ecoleta-(Booster)?node-id=0%3A1).
+The design layout can be found in [Figma](https://www.figma.com/file/yoccFn3TgFrzBbj6qWOiwF/Ecoleta).
 
 ## :memo: License
 
