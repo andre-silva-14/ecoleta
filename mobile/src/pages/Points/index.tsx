@@ -60,32 +60,32 @@ const Points = () => {
                 contentContainerStyle={{ paddingHorizontal: 20 }}
               >
                 <TouchableOpacity style={styles.item} onPress={() => {}}>
-                  <SvgUri width={42} height={42} uri="https://c766322384da.ngrok.io/uploads/lamps.svg" />
+                  <SvgUri width={42} height={42} uri="https://f6b06e8aeb18.ngrok.io/uploads/lamps.svg" />
                   <Text style={styles.itemTitle}>Lamps</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.item} onPress={() => {}}>
-                  <SvgUri width={42} height={42} uri="https://c766322384da.ngrok.io/uploads/lamps.svg" />
+                  <SvgUri width={42} height={42} uri="https://f6b06e8aeb18.ngrok.io/uploads/lamps.svg" />
                   <Text style={styles.itemTitle}>Lamps</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.item} onPress={() => {}}>
-                  <SvgUri width={42} height={42} uri="https://c766322384da.ngrok.io/uploads/lamps.svg" />
+                  <SvgUri width={42} height={42} uri="https://f6b06e8aeb18.ngrok.io/uploads/lamps.svg" />
                   <Text style={styles.itemTitle}>Lamps</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.item} onPress={() => {}}>
-                  <SvgUri width={42} height={42} uri="https://c766322384da.ngrok.io/uploads/lamps.svg" />
+                  <SvgUri width={42} height={42} uri="https://f6b06e8aeb18.ngrok.io/uploads/lamps.svg" />
                   <Text style={styles.itemTitle}>Lamps</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.item} onPress={() => {}}>
-                  <SvgUri width={42} height={42} uri="https://c766322384da.ngrok.io/uploads/lamps.svg" />
+                  <SvgUri width={42} height={42} uri="https://f6b06e8aeb18.ngrok.io/uploads/lamps.svg" />
                   <Text style={styles.itemTitle}>Lamps</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.item} onPress={() => {}}>
-                  <SvgUri width={42} height={42} uri="https://c766322384da.ngrok.io/uploads/lamps.svg" />
+                  <SvgUri width={42} height={42} uri="https://f6b06e8aeb18.ngrok.io/uploads/lamps.svg" />
                   <Text style={styles.itemTitle}>Lamps</Text>
                 </TouchableOpacity>
               </ScrollView>
