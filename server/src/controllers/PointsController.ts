@@ -4,6 +4,8 @@ import { Request, Response } from 'express';
 class PointsController {
     async index (request: Request, response: Response) {
         const { city, countryCode, items } = request.query;
+        const host = request.headers.host;
+        const xRequestProtocol = request.headers["x-forwarded-proto"] ? "https" : "http";
 
         const parsedItems = String(items)
             .split(',')
@@ -20,7 +22,7 @@ class PointsController {
         const serializedPoints = points.map(point => {
             return {
                 ...point,
-                image_url: `http://localhost:3333/uploads/OrgImages/${point.image}`
+                image_url: `${xRequestProtocol}://${host}/uploads/OrgImages/${point.image}`
             };
         });
 
@@ -30,6 +32,8 @@ class PointsController {
 
     async show (request: Request, response: Response) {
         const { id } = request.params;
+        const host = request.headers.host;
+        const xRequestProtocol = request.headers["x-forwarded-proto"] ? "https" : "http";
 
         const point = await knex('points').where('id', id).first();
 
@@ -44,7 +48,7 @@ class PointsController {
 
         const serializedPoint = {
             ...point,
-            image_url: `http://localhost:3333/uploads/OrgImages/${point.image}`,
+            image_url: `${xRequestProtocol}://${host}/uploads/OrgImages/${point.image}`,
             items,
         };
 
