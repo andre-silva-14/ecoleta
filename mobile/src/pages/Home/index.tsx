@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Feather as Icon } from '@expo/vector-icons';
-import { View, ImageBackground, Text, Image, StyleSheet } from 'react-native';
+import { View, ImageBackground, Text, Image, StyleSheet, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
+    const [countryCode, setCountryCode] = useState('');
+    const [city, setCity] = useState('');
     const navigation = useNavigation();
 
     function handleNavigateToPoints() {
-      navigation.navigate('Points');
+      navigation.navigate('Points', {
+        countryCode,
+        city
+      });
     };
 
     return (
+      <KeyboardAvoidingView 
+        style={{ flex: 1}} 
+        behavior={Platform.OS ==='ios' ? 'padding' : undefined}
+      >
         <ImageBackground 
             source={require('../../assets/home-background.png')}
             style={styles.container}
@@ -19,11 +28,29 @@ const Home = () => {
         >
             <View style={styles.main}>
                 <Image source={require('../../assets/logo.png')} />
-                <Text style={styles.title}>A waste collection marketplace.</Text>
-                <Text style={styles.description}>We help you to find collect points efficiently.</Text>
+                <View>
+                  <Text style={styles.title}>A waste collection marketplace.</Text>
+                  <Text style={styles.description}>We help you to find collect points efficiently.</Text>
+                </View>
             </View>
 
             <View style={styles.footer}>
+                <TextInput
+                  style={styles.input}
+                  placeholder="Country Code"
+                  value={countryCode}
+                  maxLength={2}
+                  autoCapitalize="characters"
+                  autoCorrect={false}
+                  onChangeText={setCountryCode}
+                />
+                <TextInput
+                  style={styles.input}
+                  placeholder="City"
+                  value={city}
+                  autoCorrect={false}
+                  onChangeText={setCity}
+                />
                 <RectButton style={styles.button} onPress={handleNavigateToPoints}>
                     <View style={styles.buttonIcon}>
                         <Icon name="arrow-right" color="#FFF" size={24}></Icon>
@@ -32,6 +59,7 @@ const Home = () => {
                 </RectButton>
             </View>
         </ImageBackground>
+      </KeyboardAvoidingView>
     );
 };
 
