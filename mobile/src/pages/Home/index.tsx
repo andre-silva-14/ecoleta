@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Feather as Icon } from '@expo/vector-icons';
 import { View, ImageBackground, Text, Image, StyleSheet, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import RNPickerSelect from 'react-native-picker-select';
+import countryCodes from './countryCodes';
+import getCitiesfromCC from '../../services/getCities';
 
 const Home = () => {
     const [countryCode, setCountryCode] = useState('');
     const [city, setCity] = useState('');
+    const [cityList, setCityList] = useState<string[]>([]);
     const navigation = useNavigation();
+
+    function handleChangeCoutryCode(value: string, index: number) {
+      setCountryCode(value);
+    };
+
+    function handleChangeRegion(value: string, index: number) {
+      setCity(value);
+    };
 
     function handleNavigateToPoints() {
       navigation.navigate('Points', {
@@ -16,9 +28,19 @@ const Home = () => {
       });
     };
 
+    useEffect(() => {
+      if (countryCode === null) {
+          return setCityList([]);
+      }
+      getCitiesfromCC(countryCode)
+        .then(result => setCityList(result))
+        .catch(error => setCityList([]));
+      
+    }, [countryCode]);
+
     return (
       <KeyboardAvoidingView 
-        style={{ flex: 1}} 
+        style={{ flex: 1 }} 
         behavior={Platform.OS ==='ios' ? 'padding' : undefined}
       >
         <ImageBackground 
@@ -35,21 +57,15 @@ const Home = () => {
             </View>
 
             <View style={styles.footer}>
-                <TextInput
-                  style={styles.input}
-                  placeholder="Country Code"
-                  value={countryCode}
-                  maxLength={2}
-                  autoCapitalize="characters"
-                  autoCorrect={false}
-                  onChangeText={setCountryCode}
+                <RNPickerSelect
+                  onValueChange={handleChangeCoutryCode}
+                  placeholder={{ label: "Choose your Country Code...", value: null }}
+                  items={countryCodes.map(countryCode => {return { label: countryCode, value: countryCode }})}
                 />
-                <TextInput
-                  style={styles.input}
-                  placeholder="City"
-                  value={city}
-                  autoCorrect={false}
-                  onChangeText={setCity}
+                <RNPickerSelect
+                  onValueChange={handleChangeRegion}
+                  placeholder={{ label: "Choose your Region...", value: null }}
+                  items={cityList.map(city => {return { label: city, value: city }})}
                 />
                 <RectButton style={styles.button} onPress={handleNavigateToPoints}>
                     <View style={styles.buttonIcon}>
